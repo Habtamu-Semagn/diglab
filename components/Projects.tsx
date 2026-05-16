@@ -17,9 +17,8 @@ const projects = [
     { imagesrc: project6image, altname: "Project 6" },
 ]
 
-const GAP = 24
+const GAP = 16
 
-// build an infinite window of 5 items centered on a given index
 const getWindow = (centerIndex: number) => {
   const len = projects.length;
   return [-2, -1, 0, 1, 2].map((offset) => {
@@ -30,7 +29,7 @@ const getWindow = (centerIndex: number) => {
 
 export default function ProjectsSection() {
   const [centerIndex, setCenterIndex] = useState(0);
-  const [window, setWindow] = useState(() => getWindow(0));
+  const [visibleWindow, setVisibleWindow] = useState(() => getWindow(0));
   const scrollRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const isPaused = useRef(false);
@@ -38,17 +37,20 @@ export default function ProjectsSection() {
 
   const getItemWidth = useCallback(() => {
     if (!scrollRef.current) return 0;
-    return (scrollRef.current.offsetWidth - GAP * 2) / 3;
+    const containerWidth = scrollRef.current.offsetWidth;
+    if (containerWidth < 640) {
+      return containerWidth * 0.75;
+    }
+    return (containerWidth - GAP * 2) / 3;
   }, []);
 
-  // always scroll to center item (index 2 in the 5-item window)
-  // but show only 3 at a time starting from index 1
   const scrollToCenter = useCallback((behavior: ScrollBehavior = "smooth") => {
     if (!scrollRef.current) return;
     const itemWidth = getItemWidth();
-    // scroll so that item at position 1 (prev) is at left edge
-    const left = 1 * (itemWidth + GAP);
-    scrollRef.current.scrollTo({ left, behavior });
+    const containerWidth = scrollRef.current.offsetWidth;
+    const centerItemLeft = 2 * (itemWidth + GAP);
+    const offset = centerItemLeft - (containerWidth - itemWidth) / 2;
+    scrollRef.current.scrollTo({ left: offset, behavior });
   }, [getItemWidth]);
 
   const goNext = useCallback(() => {
@@ -57,20 +59,23 @@ export default function ProjectsSection() {
 
     const nextCenter = (centerIndex + 1) % projects.length;
 
-    // scroll right to item at position 2 (current center moves left)
     if (scrollRef.current) {
       const itemWidth = getItemWidth();
-      const left = 2 * (itemWidth + GAP);
-      scrollRef.current.scrollTo({ left, behavior: "smooth" });
+      const containerWidth = scrollRef.current.offsetWidth;
+      const nextItemLeft = 3 * (itemWidth + GAP);
+      const offset = nextItemLeft - (containerWidth - itemWidth) / 2;
+      scrollRef.current.scrollTo({ left: offset, behavior: "smooth" });
     }
 
     setTimeout(() => {
       setCenterIndex(nextCenter);
-      setWindow(getWindow(nextCenter));
-      // instantly reset scroll to center without animation
+      setVisibleWindow(getWindow(nextCenter));
       if (scrollRef.current) {
         const itemWidth = getItemWidth();
-        scrollRef.current.scrollTo({ left: 1 * (itemWidth + GAP), behavior: "instant" });
+        const containerWidth = scrollRef.current.offsetWidth;
+        const centerItemLeft = 2 * (itemWidth + GAP);
+        const offset = centerItemLeft - (containerWidth - itemWidth) / 2;
+        scrollRef.current.scrollTo({ left: offset, behavior: "instant" });
       }
       isAnimating.current = false;
     }, 500);
@@ -82,19 +87,23 @@ export default function ProjectsSection() {
 
     const prevCenter = (centerIndex - 1 + projects.length) % projects.length;
 
-    // scroll left to item at position 0
     if (scrollRef.current) {
       const itemWidth = getItemWidth();
-      const left = 0 * (itemWidth + GAP);
-      scrollRef.current.scrollTo({ left, behavior: "smooth" });
+      const containerWidth = scrollRef.current.offsetWidth;
+      const prevItemLeft = 1 * (itemWidth + GAP);
+      const offset = prevItemLeft - (containerWidth - itemWidth) / 2;
+      scrollRef.current.scrollTo({ left: offset, behavior: "smooth" });
     }
 
     setTimeout(() => {
       setCenterIndex(prevCenter);
-      setWindow(getWindow(prevCenter));
+      setVisibleWindow(getWindow(prevCenter));
       if (scrollRef.current) {
         const itemWidth = getItemWidth();
-        scrollRef.current.scrollTo({ left: 1 * (itemWidth + GAP), behavior: "instant" });
+        const containerWidth = scrollRef.current.offsetWidth;
+        const centerItemLeft = 2 * (itemWidth + GAP);
+        const offset = centerItemLeft - (containerWidth - itemWidth) / 2;
+        scrollRef.current.scrollTo({ left: offset, behavior: "instant" });
       }
       isAnimating.current = false;
     }, 500);
@@ -104,9 +113,7 @@ export default function ProjectsSection() {
     if (isAnimating.current) return;
     const diff = (realIndex - centerIndex + projects.length) % projects.length;
     if (diff === 0) return;
-    // go forward or backward based on shortest path
     if (diff <= projects.length / 2) {
-      // go forward diff times
       let count = 0;
       const forward = setInterval(() => {
         goNext();
@@ -124,7 +131,6 @@ export default function ProjectsSection() {
     }
   }, [centerIndex, goNext, goPrev]);
 
-  // auto play
   const startAutoPlay = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
@@ -135,7 +141,6 @@ export default function ProjectsSection() {
   const stopAutoPlay = () => { isPaused.current = true; };
   const resumeAutoPlay = () => { isPaused.current = false; };
 
-  // init scroll position to center on mount
   useEffect(() => {
     scrollToCenter("instant");
   }, [scrollToCenter]);
@@ -146,61 +151,64 @@ export default function ProjectsSection() {
   }, [startAutoPlay]);
 
   return (
-    <div className="grid grid-cols-12 py-20">
-      <div className="col-start-2 col-span-10 flex flex-col items-center gap-4">
+    <div className="lg:grid lg:grid-cols-12 pb-20 pt-30">
+      <div className="lg:col-start-2 lg:col-span-10 flex flex-col items-center gap-4">
 
         {/* Header */}
         <p className="text-sm font-semibold tracking-widest text-green-500 uppercase">
           Accomplishments
         </p>
-        <h2 className="text-4xl font-semibold text-gray-800 tracking-tight text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 tracking-tight text-center">
           Our Projects
         </h2>
-        <p className="text-gray-500 font-light text-center max-w-xl leading-relaxed">
+        <p className="text-gray-500 font-light text-center max-w-xl leading-relaxed px-4">
           Far far away behind the word mountains, far from the countries Vokalia and Consonantia
         </p>
 
-        {/* Scroll Container — renders 5 items but only 3 visible */}
+        {/* Scroll Container */}
         <div
           ref={scrollRef}
-          className="w-full flex mt-6 overflow-x-hidden gap-6"
+          className="w-full mt-6 overflow-x-hidden"
+          style={{ display: "flex", gap: `${GAP}px` }}
           onMouseEnter={stopAutoPlay}
           onMouseLeave={resumeAutoPlay}
         >
-          {window.map((project, index) => (
-  <div
-    key={`${project.realIndex}-${index}`}
-    className="relative flex-shrink-0 h-[400px] cursor-pointer overflow-hidden group"
-    style={{ width: `calc((100% - ${GAP * 2}px) / 3)` }}
-    onClick={() => {
-      if (index === 1) goPrev();
-      if (index === 3) goNext();
-    }}
-  >
-    <Image
-      src={project.imagesrc}
-      alt={project.altname}
-      fill
-      className="object-cover transition-transform duration-500 group-hover:scale-110"
-    />
+          {visibleWindow.map((project, index) => {
+            const isMobile = typeof globalThis !== "undefined" && globalThis.innerWidth < 640;
+            const itemWidth = isMobile ? "75vw" : `calc((100% - ${GAP * 2}px) / 3)`;
 
-    {/* hover overlay */}
-<div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end">
-  
-  {/* text block at bottom with green background */}
-  <div className="bg-green-500 px-5 py-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 flex flex-col gap-1">
-    <p className="text-white text-lg  text-base font-semibold tracking-tight">
-      WORK NAME
-    </p>
-    <p className="text-white text-sm tracking-wide font-normal">
-      Web Design
-    </p>
-  </div>
+            return (
+              <div
+                key={`${project.realIndex}-${index}`}
+                className="relative flex-shrink-0 h-[280px] sm:h-[400px] cursor-pointer overflow-hidden group"
+                style={{ width: itemWidth }}
+                onClick={() => {
+                  if (index === 1) goPrev();
+                  if (index === 3) goNext();
+                }}
+              >
+                <Image
+                  src={project.imagesrc}
+                  alt={project.altname}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
 
-</div>
+                {/* hover overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end">
+                  <div className="bg-[#3DB85C] px-5 py-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 flex flex-col gap-1">
+                    <p className="text-white text-base font-bold tracking-tight">
+                      WORK NAME
+                    </p>
+                    <p className="text-white text-sm font-normal">
+                      Web Design
+                    </p>
+                  </div>
+                </div>
 
-  </div>
-))}
+              </div>
+            );
+          })}
         </div>
 
         {/* Dot Navigation */}

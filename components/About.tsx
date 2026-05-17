@@ -9,9 +9,11 @@ export default function About(){
             <div className="flex flex-col gap-5 text-gray-400 tracking-wide"><p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
                 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p></div>
-        <div className="flex flex-col bg-green-400 text-black p-9 w-110 -translate-x-40 mt-10">
-            <span className="text-xl">20</span>
-            <span className="text-xl uppercase">years of experience</span>
+        <div className="flex flex-col flex-row-reverse bg-green-400 text-black p-9 w-95 -translate-x-30 mt-10">
+            <div className="flex flex-col gap-1">
+                <span className="text-3xl">20</span>
+                <span className="text-xl uppercase font-light">years of experience</span>
+            </div>
         </div>
         </div>
     </div>

@@ -1,8 +1,10 @@
 
 import About from "@/components/About";
 import HeroSection from "@/components/Hero";
+import Overview from "@/components/Overview";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
+import Staff from "@/components/Staff";
 
 export default function Home() {
   
@@ -12,6 +14,8 @@ export default function Home() {
         <Services />
         <Projects />
         <About />
+        <Staff />
+        <Overview />
     </>
   );
 }

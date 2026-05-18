@@ -1,5 +1,6 @@
 
 import About from "@/components/About";
+import Blog from "@/components/Blog";
 import FAQ from "@/components/FAQ";
 import HeroSection from "@/components/Hero";
 import Overview from "@/components/Overview";
@@ -24,6 +25,7 @@ export default function Home() {
         <Partners />
         <FAQ />
         <Testimonial />
+        <Blog />
     </>
   );
 }

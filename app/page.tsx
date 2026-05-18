@@ -8,6 +8,7 @@ import Process from "@/components/Process";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import Staff from "@/components/Staff";
+import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   
@@ -22,6 +23,7 @@ export default function Home() {
         <Process />
         <Partners />
         <FAQ />
+        <Testimonial />
     </>
   );
 }

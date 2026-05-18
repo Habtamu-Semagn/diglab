@@ -1,3 +1,7 @@
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
+import { Textarea } from "./ui/textarea"
+
 const contacts = [
     {
         name: "address",
@@ -52,6 +56,38 @@ export default function() {
                         </div>)
                         }
                    </div>
+
+                    {/* send message input  */}
+                    <div className="grid sm:grid-cols-2 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+
+                          {/* Map placeholder */}
+                          <div className="bg-gray-200 min-h-64 sm:min-h-full flex items-center justify-center text-gray-400 text-sm tracking-wide">
+                            Location Map
+                          </div>
+
+                          {/* Form */}
+                          <div className="bg-slate-100 flex flex-col gap-4 p-8">
+
+                            <Input
+                              placeholder="Your Name"
+                              className="px-3 py-7 bg-white border-gray-300 focus:border-green-400 focus:ring-2 focus:ring-green-100 rounded-lg py-5 text-sm placeholder:text-gray-600 tracking-wide"
+                            />
+                            <Input
+                              placeholder="Your Email"
+                              className="px-3 py-7 bg-white border-gray-300 focus:border-green-400 focus:ring-2 focus:ring-green-100 rounded-lg py-5 text-sm placeholder:text-gray-600 tracking-wide"
+                            />
+                            <Input
+                              placeholder="Subject"
+                              className="px-3 py-7 bg-white border-gray-300 focus:border-green-400 focus:ring-2 focus:ring-green-100 rounded-lg py-5 text-sm placeholder:text-gray-600 tracking-wide"
+                            />
+                            <Textarea
+                              placeholder="Message"
+                              className="px-3 min-h-42 border-gray-300 bg-white focus:border-green-400 focus:ring-2 focus:ring-green-100 rounded-lg text-sm placeholder:text-gray-600 tracking-wide resize-none leading-relaxed"
+                            />
+                            <Button style={{background: 'linear-gradient(to right, #7ac64d, #31de79)'}} className="self-start px-12 py-7 text-md rounded-full">Send Message</Button>
+
+                          </div>
+                        </div>
                 </div>
             </div> 
 }

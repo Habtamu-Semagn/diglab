@@ -3,6 +3,7 @@ import About from "@/components/About";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/Hero";
 import Overview from "@/components/Overview";
 import Partners from "@/components/Partners";
@@ -28,6 +29,7 @@ export default function Home() {
         <Testimonial />
         <Blog />
         <Contact />
+        <Footer />
     </>
   );
 }

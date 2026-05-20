@@ -1,4 +1,4 @@
-import { ArrowRightIcon, Heart, Mail, PhoneIcon } from "lucide-react";
+import { Heart, Mail, PhoneIcon } from "lucide-react";
 import { BiLocationPlus } from "react-icons/bi";
 import { BsInstagram, BsTwitter } from "react-icons/bs";
 import { FaFacebook, FaLongArrowAltRight, FaTwitter } from "react-icons/fa";

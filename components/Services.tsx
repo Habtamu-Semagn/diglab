@@ -52,7 +52,6 @@ const serviceItems = [
 ]
 export default function Services() {
     const [activeItem, setActiveItem] = useState(menuItems[0].label)
-    const [hovered, setHovered] = useState();
     const activeMenuItem = menuItems.find((item) => item.label === activeItem)
     return <div >
             <div className="grid grid-cols-12 bg-gray-50">

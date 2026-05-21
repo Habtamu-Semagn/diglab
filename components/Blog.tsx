@@ -1,10 +1,10 @@
 import Image from "next/image";
 import pcImage1 from "@/public/images/person_1.jpg"
 import { Button } from "./ui/button";
-import { ChevronRight, MessageSquare, MessageSquareText, TextWrapIcon } from "lucide-react";
+import { ChevronRight, MessageSquare } from "lucide-react";
 export default function Blog(){
-    return <div className="lg:grid lg:grid-cols-12 pb-20 pt-30 bg-gray-50">
-                 <div className="lg:col-start-2 lg:col-span-10 flex flex-col gap-4">
+    return <div className="md:grid md:grid-cols-12 pb-20 pt-30 bg-gray-50">
+                 <div className="md:col-start-2 md:col-span-10 flex flex-col gap-4">
 
                    {/* Header */}
                    <p className="text-sm font-semibold tracking-widest text-green-500 uppercase self-center">
@@ -16,10 +16,10 @@ export default function Blog(){
                    <p className="text-gray-500 font-light text-center leading-relaxed px-4 my-5 self-center">
                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
                    </p>
-                   <div className="grid sm:grid-cols-3 gap-10 my-20">
-                        <div className="flex flex-col">
+                   <div className="grid grid-cols-1 md:grid-cols-3 place-items-center md:place-items-start gap-20 md:gap-5 my-20">
+                        <div className="flex flex-col w-full max-w-md mx-auto">
                             <div className="relative">
-                                <Image src={pcImage1} alt="pc-image-1"/>
+                                <Image src={pcImage1} alt="pc-image-1" className="w-full h-auto" />
                                 <div className="absolute top-0 left-0 bg-green-500 flex gap-2 py-3 px-7 text-white">
                                     <p className="flex justify-center items-center text-5xl font-semibold">12</p>
                                     <p className="flex flex-col"> 
@@ -31,11 +31,11 @@ export default function Blog(){
                             <p className="font-medium text-lg tracking-wide leading-relaxed my-3">Why Lead Generation is Key for Bussiness Growth</p>
                             <p className="text-gray-500 text-sm tracking-wide leading-relaxed">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                             <div className="flex justify-between items-center mt-7">
-                                <Button className="p-5 rounded-full bg-green-500 tracking-wide">Read More <ChevronRight size={24} strokeWidth={3} /></Button>
-                                <p className="flex gap-3 text-gray-500 text-sm tracking-wide">Admin <MessageSquare /> 3</p>
+                                <Button className="p-2 md:p-5 rounded-full bg-green-500 tracking-wide text-xs lg:text-sm">Read More <ChevronRight size={24} strokeWidth={3} /></Button>
+                                <p className="flex items-center gap-1 text-gray-500 text-sm tracking-wide">Admin <MessageSquare className="w-3 h-3 lg:w-5 lg:h-5" /> 3</p>
                             </div>
                         </div>
-                       <div className="flex flex-col">
+                       <div className="flex flex-col w-full max-w-md mx-auto">
                             <div className="relative">
                                 <Image src={pcImage1} alt="pc-image-1"/>
                                 <div className="absolute top-0 left-0 bg-green-500 flex gap-2 py-3 px-7 text-white">
@@ -49,11 +49,11 @@ export default function Blog(){
                             <p className="font-medium text-lg tracking-wide leading-relaxed my-3">Why Lead Generation is Key for Bussiness Growth</p>
                             <p className="text-gray-500 text-sm tracking-wide leading-relaxed">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                             <div className="flex justify-between items-center mt-7">
-                                <Button className="p-5 rounded-full bg-green-500 tracking-wide">Read More <ChevronRight size={24} strokeWidth={3} /></Button>
-                                <p className="flex gap-3 text-gray-500 text-sm tracking-wide">Admin <MessageSquare /> 3</p>
+                                <Button className="p-2 md:p-5 rounded-full bg-green-500 tracking-wide text-xs lg:text-sm">Read More <ChevronRight size={24} strokeWidth={3} /></Button>
+                                <p className="flex items-center gap-1 text-gray-500 text-sm tracking-wide">Admin <MessageSquare className="w-3 h-3 lg:w-5 lg:h-5" /> 3</p>
                             </div>
                         </div>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col w-full max-w-md mx-auto">
                             <div className="relative">
                                 <Image src={pcImage1} alt="pc-image-1"/>
                                 <div className="absolute top-0 left-0 bg-green-500 flex gap-2 py-3 px-7 text-white">
@@ -67,8 +67,8 @@ export default function Blog(){
                             <p className="font-medium text-lg tracking-wide leading-relaxed my-3">Why Lead Generation is Key for Bussiness Growth</p>
                             <p className="text-gray-500 text-sm tracking-wide leading-relaxed">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                             <div className="flex justify-between items-center mt-7">
-                                <Button className="p-5 rounded-full bg-green-500 tracking-wide">Read More <ChevronRight size={24} strokeWidth={3} /></Button>
-                                <p className="flex gap-3 text-gray-500 text-sm tracking-wide">Admin <MessageSquare /> 3</p>
+                                <Button className="p-2 md:p-5 rounded-full bg-green-500 tracking-wide text-xs lg:text-sm">Read More <ChevronRight size={24} strokeWidth={3} /></Button>
+                                <p className="flex items-center gap-1 text-gray-500 text-sm tracking-wide">Admin <MessageSquare className="w-3 h-3 lg:w-5 lg:h-5" /> 3</p>
                             </div>
                         </div>
                    </div>

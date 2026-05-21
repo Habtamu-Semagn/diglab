@@ -3,7 +3,7 @@ import heroImage from "@/public/pc_image.png"
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 export default function HeroSection() {
-    return <div className="bg-white-50 grid grid-cols-12 h-screen bg-[url('/pc_image.png')] bg-cover bg-center bg-no-repeat md:bg-none">
+    return <div className="bg-white-50 grid grid-cols-12 h-screen bg-[url('/pc_image.png')] bg-cover bg-center bg-no-repeat md:bg-none py-20 sm:py-0">
       
       {/* Navbar */}
       <nav className="absolute top-0 left-[8.33%] right-[8.33%] col-start-2 col-span-11 flex items-center justify-between py-6">

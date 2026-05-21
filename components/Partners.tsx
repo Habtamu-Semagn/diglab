@@ -10,7 +10,7 @@ export default function Partners(){
                    <h2 className="text-4xl max-w-xl md:text-4xl font-semibold text-gray-900 tracking-wider text-center uppercase self-center">
                      trusted by industry leaders
                    </h2>
-                   <div className="flex gap-10 my-20">
+                   <div className="flex gap-10 my-20 overflow-hidden">
                     {
                         [1,2,3,4,5].map(item => <div key={item} className="w-70 h-15 bg-gray-200 flex items-center justify-center text-gray-400">Logo {item}</div>)
                     }

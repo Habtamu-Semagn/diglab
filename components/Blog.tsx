@@ -1,9 +1,11 @@
 import Image from "next/image";
-import pcImage1 from "@/public/images/person_1.jpg"
+import pcImage1 from "@/public/images/blog_1.jpg"
+import pcImage2 from "@/public/images/blog_2.jpg"
+import pcImage3 from "@/public/images/blog_3.jpg"
 import { Button } from "./ui/button";
 import { ChevronRight, MessageSquare } from "lucide-react";
 export default function Blog(){
-    return <div className="md:grid md:grid-cols-12 pb-20 pt-30 bg-gray-50">
+    return <div className="md:grid md:grid-cols-12 pt-30 bg-gray-50">
                  <div className="md:col-start-2 md:col-span-10 flex flex-col gap-4">
 
                    {/* Header */}
@@ -18,8 +20,8 @@ export default function Blog(){
                    </p>
                    <div className="grid grid-cols-1 md:grid-cols-3 place-items-center md:place-items-start gap-20 md:gap-5 my-20">
                         <div className="flex flex-col w-full max-w-md mx-auto">
-                            <div className="relative">
-                                <Image src={pcImage1} alt="pc-image-1" className="w-full h-auto" />
+                            <div className="relative w-full h-64 md:h-52 lg:h-64">
+                                <Image src={pcImage1} alt="pc-image-1" fill className="object-cover" />
                                 <div className="absolute top-0 left-0 bg-green-500 flex gap-2 py-3 px-7 text-white">
                                     <p className="flex justify-center items-center text-5xl font-semibold">12</p>
                                     <p className="flex flex-col"> 
@@ -36,8 +38,8 @@ export default function Blog(){
                             </div>
                         </div>
                        <div className="flex flex-col w-full max-w-md mx-auto">
-                            <div className="relative">
-                                <Image src={pcImage1} alt="pc-image-1"/>
+                            <div className="relative w-full h-64 md:h-52 lg:h-64">
+                                <Image src={pcImage2} alt="pc-image-1" fill className="object-cover" />
                                 <div className="absolute top-0 left-0 bg-green-500 flex gap-2 py-3 px-7 text-white">
                                     <p className="flex justify-center items-center text-5xl font-semibold">12</p>
                                     <p className="flex flex-col"> 
@@ -54,8 +56,8 @@ export default function Blog(){
                             </div>
                         </div>
                         <div className="flex flex-col w-full max-w-md mx-auto">
-                            <div className="relative">
-                                <Image src={pcImage1} alt="pc-image-1"/>
+                            <div className="relative w-full h-64 md:h-52 lg:h-64">
+                                <Image src={pcImage3} alt="pc-image-1" fill className="object-cover" />
                                 <div className="absolute top-0 left-0 bg-green-500 flex gap-2 py-3 px-7 text-white">
                                     <p className="flex justify-center items-center text-5xl font-semibold">12</p>
                                     <p className="flex flex-col"> 

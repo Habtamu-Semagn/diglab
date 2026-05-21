@@ -4,8 +4,8 @@ import { BsInstagram, BsTwitter } from "react-icons/bs";
 import { FaFacebook, FaLongArrowAltRight, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
-    return <div className="lg:grid lg:grid-cols-12 pb-20 pt-30 bg-black text-gray-400">
-                 <div className="grid md:grid-cols-4 gap-10 lg:col-start-2 lg:col-span-10 flex flex-col gap-4">
+    return <div className="px-10 md:grid md:grid-cols-12 pb-20 pt-30 bg-black text-gray-400">
+                 <div className="grid md:grid-cols-4 gap-10 md:col-start-2 md:col-span-10 flex flex-col gap-4">
 
                    <div className="flex flex-col gap-10">
                     <p className="text-xl tracking-wide font-medium text-white">About DigiLab</p>
@@ -41,7 +41,7 @@ export default function Footer() {
                    </div>
                 </div>
 
-               <p className="tracking-wide lg:col-start-2 lg:col-span-10 text-center text-gray-400 text-sm pt-6 mt-10 flex items-center justify-center gap-1">
+               <p className="tracking-wide md:col-start-2 md:col-span-10 text-center text-gray-400 text-sm pt-6 mt-10 flex items-center justify-center gap-1">
     Copyright &copy;2026 All rights reserved | This template is made with <Heart size={14} /> by Colorlib
   </p>
             </div> 

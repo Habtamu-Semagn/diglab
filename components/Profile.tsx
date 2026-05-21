@@ -12,7 +12,7 @@ export default function Profile({imagesrc, role, name}: {imagesrc: string | Stat
             <p className="capitalized text-2xl tracking-wide">{name}</p>
             <p className="uppercase text-green-500 tracking-wider font-light">{role}</p>
         </div>
-        <p className="flex gap-2">
+        <p className="flex gap-2 mb-5">
             <BsTwitter size={18} />
             <FaFacebookF size={18} />
             <LiaLinkedinIn size={18} />

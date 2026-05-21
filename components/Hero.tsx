@@ -1,13 +1,14 @@
 import Image from "next/image";
 import heroImage from "@/public/pc_image.png"
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 export default function HeroSection() {
     return <div className="bg-white-50 grid grid-cols-12 h-screen bg-[url('/pc_image.png')] bg-cover bg-center bg-no-repeat md:bg-none">
       
       {/* Navbar */}
       <nav className="absolute top-0 left-[8.33%] right-[8.33%] col-start-2 col-span-11 flex items-center justify-between py-6">
         <h2 className="text-xl font-bold">DIGI<span className="text-[#31de79]">LAB</span></h2>
-        <ul className="flex gap-13 text-gray-600 text-green-500">
+        <ul className="hidden lg:flex  lg:gap-13 text-gray-600 text-green-500">
           <li>Home</li>
           <li>Services</li>
           <li>Projects</li>
@@ -16,6 +17,7 @@ export default function HeroSection() {
           <li>Blog</li>
           <li>Contact</li>
         </ul>
+        <Menu className="lg:hidden w-6 h-6" />
       </nav>
 
       <div className="col-start-2 col-span-10 md:col-start-2 md:col-span-5 flex flex-col justify-center items-center md:items-start pr-15 gap-10">

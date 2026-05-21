@@ -5,7 +5,7 @@ import { FaFacebook, FaLongArrowAltRight, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
     return <div className="lg:grid lg:grid-cols-12 pb-20 pt-30 bg-black text-gray-400">
-                 <div className="grid sm:grid-cols-4 gap-10 lg:col-start-2 lg:col-span-10 flex flex-col gap-4">
+                 <div className="grid md:grid-cols-4 gap-10 lg:col-start-2 lg:col-span-10 flex flex-col gap-4">
 
                    <div className="flex flex-col gap-10">
                     <p className="text-xl tracking-wide font-medium text-white">About DigiLab</p>
@@ -37,7 +37,7 @@ export default function Footer() {
                     <p className="text-xl tracking-wide font-medium text-white">Have a Question</p>
                     <p className="flex gap-5"><BiLocationPlus className="w-15 h-15" />	203 Fake St. Mountain View, San Francisco, California, USA</p>
                     <p className="flex gap-5"><PhoneIcon /> 	+2 392 3929 210</p>
-                    <p className="flex gap-5"><Mail /> 	info@yourdomain.com</p>
+                    <p className="flex gap-5 break-all"><Mail />info@yourdomain.com</p>
                    </div>
                 </div>
 

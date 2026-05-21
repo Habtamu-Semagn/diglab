@@ -55,7 +55,7 @@ export default function Services() {
     const activeMenuItem = menuItems.find((item) => item.label === activeItem)
     return <div >
             <div className="grid grid-cols-12 bg-gray-50">
-    <div className="col-start-2 col-span-3 bg-green-500 min-h-screen flex flex-col px-8 py-10 gap-2 relative">
+    <div className="col-start-2 col-span-10 md:col-start-2 md:col-span-3 bg-green-500 md:min-h-screen flex flex-col px-8 py-10 gap-2 relative">
       {menuItems.map((item) => (
         <div
           key={item.label}
@@ -69,7 +69,7 @@ export default function Services() {
         </div>
       ))}
     </div>
-      <div className="col-start-6 col-span-5 flex items-center justify-center">{
+      <div className="col-start-2 col-span-10 pl-8 py-12 md:col-start-6 md:col-span-5 flex items-center justify-center">{
             activeMenuItem && (
                 <div className="flex flex-col gap-6 max-w-lg">
 
@@ -104,7 +104,7 @@ export default function Services() {
             </div>
 
             <div className="grid grid-cols-12 bg-[url('/images/service_section_image.jpg')] bg-cover bg-center bg-no-repeat">
-                {serviceItems.map((item) => <div key={item.title} className="group col-start-7 col-span-6 bg-white mt-1 flex py-7 opacity-90 transition-transform duration-500 cursor-pointer hover:-translate-x-20">
+                {serviceItems.map((item) => <div key={item.title} className="group col-start-2 sm:col-start-4 md:col-start-7 col-span-11 md:col-span-6 bg-white mt-1 flex py-7 opacity-90 transition-transform duration-500 cursor-pointer hover:-translate-x-10 sm:hover:-translate-x-20">
                     <p className="px-5 h-full flex items-center justify-center">
                         <ChevronRight className="text-green-500 group-hover:hidden" /> 
                         <ChevronLeft className="text-green-500 hidden group-hover:block" />

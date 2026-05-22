@@ -9,7 +9,7 @@ function ProcessItem({ index, name, description, icon }: { index: number; name: 
   return (
     <div className="flex flex-col flex-wrap items-center text-center">
       <p className="text-5xl text-slate-200 font-bold mb-3">0{index + 1}</p>
-      <div className="w-25 h-25 rounded-full bg-green-500 flex justify-center items-center p-5">
+      <div style={{background: 'linear-gradient(to bottom right, #7ac64d 30%, #31de79)'}} className="w-25 h-25 rounded-full flex justify-center items-center p-5">
         <Image src={icon} alt={name} className="w-10 h-10 object-contain brightness-0 invert" />
       </div>
       <p className="font-semibold text-lg tracking-wide my-5">{name}</p>
@@ -19,7 +19,7 @@ function ProcessItem({ index, name, description, icon }: { index: number; name: 
 }
 
 function Line() {
-  return <div className="hidden lg:block h-[2px] w-8 lg:w-16 bg-green-400 flex-shrink-0 mt-24" />;
+  return <div style={{background: 'linear-gradient(to bottom right, #31de79 20%, #fff)'}} className="hidden lg:block h-[2px] w-8 lg:w-16 bg-green-400 flex-shrink-0 mt-24" />;
   //                                                                               ↑ pushes line down to icon level
 }
 

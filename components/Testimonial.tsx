@@ -5,6 +5,7 @@ import person1profile from "@/public/images/person_1.jpg"
 import person2profile from "@/public/images/person_2.jpg"
 import person3profile from "@/public/images/person_3.jpg"
 import person4profile from "@/public/images/person_4.jpg"
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const projects = [
     { imagesrc: person1profile, altname: "Person 1" },
@@ -147,7 +148,7 @@ export default function ProjectsSection() {
   }, [startAutoPlay]);
 
   return (
-    <div className="lg:grid lg:grid-cols-12 pb-20 pt-30 bg-green-500">
+    <div className="lg:grid lg:grid-cols-12 pb-20 pt-30 bg-[#42E47A]">
       <div className="lg:col-start-2 lg:col-span-10 flex flex-col items-center">
 
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 text-white uppercase tracking-tight text-center">
@@ -169,7 +170,7 @@ export default function ProjectsSection() {
             return (
               <div
                 key={`${project.realIndex}-${index}`}
-                className="flex-shrink-0 flex flex-col items-center h-[500px] sm:h-[500px] cursor-pointer overflow-hidden bg-green-500"
+                className="flex-shrink-0 flex flex-col items-center h-[500px] sm:h-[500px] cursor-pointer overflow-hidden bg-[#42E47A]"
                 style={{ width: itemWidth }}
                 onClick={() => {
                   if (index === 1) goPrev();
@@ -180,9 +181,9 @@ export default function ProjectsSection() {
                     <Image
                       src={project.imagesrc}
                       alt={project.altname}
-                      className="w-30 h-30 border-green-500 border-xl rounded-full transition-transform duration-500 translate-y-15 border-7 border-green-500"
+                      className="w-30 h-30 border-[#42E47A] border-xl rounded-full transition-transform duration-500 translate-y-15 border-7"
                       />
-                      <div className="absolute -bottom-15 right-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center z-999">{">>"}</div>
+                      <div style={{background: 'linear-gradient(to bottom right, #3aff3aff, #31de79)'}} className="absolute -bottom-15 right-0 w-10 h-10 rounded-full flex items-center justify-center z-999"><FaQuoteLeft className="text-white" /></div>
                 </div>
                 <div className="flex flex-col gap-10 items-center bg-white pt-20 pb-15 px-5 text-center">
                     <p className="text-gray-700 tracking-wide text-lg leading-loose">Far far away behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>

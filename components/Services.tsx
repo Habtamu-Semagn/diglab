@@ -55,7 +55,7 @@ export default function Services() {
     const activeMenuItem = menuItems.find((item) => item.label === activeItem)
     return <div >
             <div className="grid grid-cols-12 bg-gray-50">
-    <div className="col-start-2 col-span-10 md:col-start-2 md:col-span-3 bg-green-500 md:min-h-screen flex flex-col px-8 py-10 gap-2 relative">
+    <div className="col-start-2 col-span-10 md:col-start-2 md:col-span-3 bg-[#42E47A] md:min-h-screen flex flex-col px-8 py-10 gap-2 relative">
       {menuItems.map((item) => (
         <div
           key={item.label}
@@ -94,7 +94,7 @@ export default function Services() {
       </div>
 
       {/* Button */}
-      <button className="w-fit px-8 py-3 bg-green-500 hover:bg-green-600 text-white text-sm font-medium rounded-full transition-colors duration-200">
+      <button style={{background: 'linear-gradient(to right, #7ac64d, #31de79)'}} className="border-green-500 w-fit px-8 py-3 hover:bg-green-600 text-white text-sm font-medium rounded-full transition-colors duration-200">
         Learn More
       </button>
 

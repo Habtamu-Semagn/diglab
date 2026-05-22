@@ -46,8 +46,8 @@ export default function() {
                    </p>
                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 text-white">
                         {
-                            contacts.map(item => <div key={item.name} className="bg-green-500 flex flex-col gap-7 justify-start items-center py-8">
-                            <div className="w-25 h-25 rounded-full flex justify-center items-center bg-green-600">
+                            contacts.map(item => <div key={item.name} style={{background: 'linear-gradient(to bottom right, #7ac64d, #31de79)'}} className="flex flex-col gap-7 justify-start items-center py-8">
+                            <div className="w-25 h-25 rounded-full flex justify-center items-center bg-green-400/30">
                               <Image src={item.icon} alt={item.name} width={25} height={25} className="object-contain brightness-0 invert" />
                             </div>
                             <p className="uppercase text-white tracking-wide font-medium">{item.name}</p>
@@ -70,7 +70,7 @@ export default function() {
 
                           {/* Map placeholder */}
                           <div className="bg-gray-200 min-h-64 sm:min-h-full flex items-center justify-center text-gray-400 text-sm tracking-wide">
-                            Location Map
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.657350198858!2d-74.0059731!3d40.7410861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle%20NYC%20-%209th%20Avenue!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-full min-h-64" />
                           </div>
 
                           {/* Form */}

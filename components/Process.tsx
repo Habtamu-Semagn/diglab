@@ -1,9 +1,16 @@
-function ProcessItem({ index, name, description }: { index: number; name: string; description: string }) {
+import Image from "next/image"
+import icon1 from "@/public/icons/discovery.png"
+import icon2 from "@/public/icons/planning.png"
+import icon3 from "@/public/icons/execution.png"
+import icon4 from "@/public/icons/launch.png"
+import { StaticImageData } from "next/image"
+
+function ProcessItem({ index, name, description, icon }: { index: number; name: string; description: string; icon: StaticImageData }) {
   return (
     <div className="flex flex-col flex-wrap items-center text-center">
       <p className="text-5xl text-slate-200 font-bold mb-3">0{index + 1}</p>
-      <div className="w-25 h-25 rounded-full bg-green-500 flex justify-center items-center">
-        icon
+      <div className="w-25 h-25 rounded-full bg-green-500 flex justify-center items-center p-5">
+        <Image src={icon} alt={name} className="w-10 h-10 object-contain brightness-0 invert" />
       </div>
       <p className="font-semibold text-lg tracking-wide my-5">{name}</p>
       <p className="text-gray-500 tracking-wide w-full max-w-sm">{description}</p>
@@ -35,6 +42,7 @@ export default function Process() {
       description: "We deploy your project and provide ongoing support to ensure continued success.",
     },
   ];
+  const icons = [icon1, icon2, icon3, icon4];
 
   return (
     <div className="lg:grid lg:grid-cols-12 pb-20 pt-30">
@@ -53,7 +61,7 @@ export default function Process() {
         <div className="grid grid-cols-1 gap-10 md:gap-0 md:grid-cols-4 place-items-center md:place-items-start w-full mt-25">
           {processItems.map((item, index) => (
             <div key={item.name} className="flex items-center sm:items-start">
-              <ProcessItem index={index} name={item.name} description={item.description} />
+              <ProcessItem index={index} name={item.name} description={item.description} icon={icons[index]} />
               {/* Line between items, hidden on mobile */}
               {index < processItems.length - 1 && <Line />}
             </div>

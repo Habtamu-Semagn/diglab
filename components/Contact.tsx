@@ -1,26 +1,32 @@
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
+import Image from "next/image"
+import { StaticImageData } from "next/image"
+import icon1 from "@/public/icons/address.png"
+import icon2 from "@/public/icons/contact.png"
+import icon3 from "@/public/icons/email_address.png"
+import icon4 from "@/public/icons/website.png"
 
 const contacts = [
     {
         name: "address",
-        icon: "icon",
+        icon: icon1,
         detail: ["198 West 21th Street, Suite", "721 New York NY 10016"]
     },
     {
         name: "contact number",
-        icon: "icon",
+        icon: icon2,
         detail: ["+ 1235 2355 98"]
     },
     {
         name: "email address",
-        icon: "icon",
+        icon: icon3,
         detail: ["info@yoursite.com"]
     },
     {
         name: "website",
-        icon: "icon",
+        icon: icon4,
         detail: ["yoursite.com"]
     }
 ]
@@ -41,7 +47,9 @@ export default function() {
                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 text-white">
                         {
                             contacts.map(item => <div key={item.name} className="bg-green-500 flex flex-col gap-7 justify-start items-center py-8">
-                            <div className="w-25 h-25 rounded-full flex justify-center items-center bg-green-600">{item.icon}</div>
+                            <div className="w-25 h-25 rounded-full flex justify-center items-center bg-green-600">
+                              <Image src={item.icon} alt={item.name} width={25} height={25} className="object-contain brightness-0 invert" />
+                            </div>
                             <p className="uppercase text-white tracking-wide font-medium">{item.name}</p>
                             <div className="text-center">
                                 {

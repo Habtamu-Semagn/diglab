@@ -1,3 +1,12 @@
+import Image from "next/image"
+import { StaticImageData } from "next/image"
+import logo1 from "@/public/icons/logo1.png"
+import logo2 from "@/public/icons/logo2.png"
+import logo3 from "@/public/icons/logo3.png"
+import logo4 from "@/public/icons/logo4.png"
+import logo5 from "@/public/icons/logo5.png"
+
+const logos: StaticImageData[] = [logo1, logo2, logo3, logo4, logo5]
 
 export default function Partners(){
     return <div className="lg:grid lg:grid-cols-12 pb-20 pt-30 bg-gray-50">
@@ -10,9 +19,13 @@ export default function Partners(){
                    <h2 className="text-4xl max-w-xl md:text-4xl font-semibold text-gray-900 tracking-wider text-center uppercase self-center">
                      trusted by industry leaders
                    </h2>
-                   <div className="flex gap-10 my-20 overflow-hidden">
+                   <div className="flex gap-10 my-20 overflow-hidden items-center justify-center flex-wrap">
                     {
-                        [1,2,3,4,5].map(item => <div key={item} className="w-70 h-15 bg-gray-200 flex items-center justify-center text-gray-400">Logo {item}</div>)
+                        logos.map((logo, index) => (
+                            <div key={index} className="w-32 h-15 relative flex items-center justify-center">
+                                <Image src={logo} alt={`partner logo ${index + 1}`} className="object-contain w-full h-full" />
+                            </div>
+                        ))
                     }
                    </div>
                 </div>

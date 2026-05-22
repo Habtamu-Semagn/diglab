@@ -17,19 +17,23 @@ export default function Home() {
   
   return (
     <>
-        <HeroSection />
-        <Services />
-        <Projects />
-        <About />
-        <Staff />
-        <Overview />
-        <Process />
-        <Partners />
-        <FAQ />
-        <Testimonial />
-        <Blog />
-        <Contact />
-        <Footer />
+        <section id="home"><HeroSection /></section>
+        <section id="services"><Services /></section>
+        <section id="projects"><Projects /></section>
+        <section id="about">
+          <About />
+          <Staff />
+          <Overview />
+          <Process />
+          <Partners />
+          <FAQ />
+        </section>
+        <section id="testimony"><Testimonial /></section>
+        <section id="blog"><Blog /></section>
+        <section id="contact">
+          <Contact />
+          <Footer />
+        </section>
     </>
   );
 }

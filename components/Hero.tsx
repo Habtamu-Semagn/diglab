@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import heroImage from "@/public/images/hero_img.png"
+import heroImage from "@/public/images/hero_img.jpg"
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -70,7 +70,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="bg-white-50 grid grid-cols-12 h-screen bg-[url('/images/hero_img.png')] bg-cover bg-center bg-no-repeat md:bg-none py-20 sm:py-0">
+    <div className="bg-white-50 grid grid-cols-12 h-screen bg-[url('/images/hero_img.jpg')] bg-cover bg-center bg-no-repeat md:bg-none py-20 sm:py-0">
       
       {/* Navbar */}
       <nav className={`fixed top-0 left-0 right-0 flex items-center justify-between py-6 z-50 transition-all duration-300
@@ -108,7 +108,7 @@ export default function HeroSection() {
       <div className="col-start-2 col-span-10 md:col-start-2 md:col-span-5 flex flex-col justify-center items-center md:items-start pr-15 gap-10">
         <h1 className="text-green-500 tracking-widest text-center md:text-left">WELCOME TO THE DIGILAB</h1>
         <p className="text-[35px] sm:text-[40px] capitalize tracking-wide text-center md:text-left text-white md:text-black">small details make a big <span className="font-bold">impression</span></p>
-        <p className="text-xl md:text-lg tracking-wide text-center md:text-left text-gray-200 md:text-black">A small river named Dudden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+        <p className="text-xl md:text-lg tracking-wide text-center md:text-left text-gray-200 md:text-black">We deliver cutting-edge digital solutions that transform your business vision into powerful, results-driven technology experiences.</p>
         <Button style={{background: 'linear-gradient(to right, #7ac64d, #31de79)'}} className="self-center md:self-start px-12 py-7 text-md rounded-full">Get in touch</Button>
       </div>
 

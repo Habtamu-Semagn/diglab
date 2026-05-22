@@ -1,12 +1,12 @@
 "use client"
 import Image from "next/image";
 import { useState, useRef, useEffect, useCallback } from "react"
-import project1image from "@/public/images/project-1.png"
-import project2image from "@/public/images/project-2.png"
-import project3image from "@/public/images/project-3.png"
-import project4image from "@/public/images/project-4.png"
-import project5image from "@/public/images/project-5.png"
-import project6image from "@/public/images/project-6.png"
+import project1image from "@/public/images/project-1.jpg"
+import project2image from "@/public/images/project-2.jpg"
+import project3image from "@/public/images/project-3.jpg"
+import project4image from "@/public/images/project-4.jpg"
+import project5image from "@/public/images/project-5.jpg"
+import project6image from "@/public/images/project-6.jpg"
 
 const projects = [
     { imagesrc: project1image, altname: "Project 1" },
@@ -162,7 +162,7 @@ export default function ProjectsSection() {
           Our Projects
         </h2>
         <p className="text-gray-500 font-light text-center max-w-xl leading-relaxed px-4">
-          Far far away behind the word mountains, far from the countries Vokalia and Consonantia
+          A showcase of our finest work, built with precision, creativity, and a passion for delivering exceptional digital experiences.
         </p>
 
         {/* Scroll Container */}

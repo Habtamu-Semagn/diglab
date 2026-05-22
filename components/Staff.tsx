@@ -37,7 +37,7 @@ export default function Staff() {
               our staff
             </h2>
             <p className="text-gray-500 font-light text-center max-w-2xl leading-relaxed px-4 my-5 self-center">
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+              Meet the talented professionals behind DigiLab, delivering outstanding results for every client.
             </p>
             {/* <div className="flex flex-wrap justify-around mt-10"></div> */}
             <div className="col-start-1 col-span-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-10">

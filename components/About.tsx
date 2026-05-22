@@ -6,9 +6,9 @@ export default function About(){
         <div className="sm:col-start-2 md:col-start-6 col-span-12 md:col-span-6 pl-7 pr-5 w-full h-full flex flex-col justify-center">
             <p className="text-sm font-semibold tracking-widest text-green-500 uppercase mb-6">welcome to digilab</p>
             <p className="text-2xl md:text-4xl font-semibold text-slate-900 capitalize mb-8">we are digital agency</p>
-            <div className="flex flex-col gap-5 text-gray-400 tracking-wide"><p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p></div>
+            <div className="flex flex-col gap-5 text-gray-400 tracking-wide"><p>We are a passionate team of digital experts dedicated to transforming businesses through innovative technology, creative design, and data-driven strategies that deliver real results.</p>
+                <p>Over the years we have partnered with startups, growing businesses, and established enterprises to build powerful digital products that drive engagement, increase revenue, and create lasting impact.</p>
+                <p>From web development and UI/UX design to digital marketing and business strategy, we offer end-to-end solutions tailored specifically to your unique business goals and vision.</p></div>
         <div className="flex flex-col w-fit md:flex-row-reverse bg-green-400 text-black p-5 sm:p-9 sm:w-80 md:w-95 md:-translate-x-30 my-10">
             <div className="flex flex-col gap-1">
                 <span className="text-xl sm:text-2xl md:text-3xl">20</span>

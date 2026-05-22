@@ -35,19 +35,19 @@ const menuItems = [
 const serviceItems = [
     {
         title: "Market Research",
-        content: "Even the all-powerful Pointing has no control about the blind."
+        content: "Uncover valuable insights to fuel smarter business decisions."
     },
     {
         title: "Financial Services",
-        content: "Even the all-powerful Pointing has no control about the blind."
+        content: "Optimize costs and maximize revenue for sustainable growth."
     },
     {
         title: "Online Marketting",
-        content: "Even the all-powerful Pointing has no control about the blind."
+        content: "Boost your brand visibility and convert leads into customers."
     },
     {
         title: "24/7 Help & Support",
-        content: "Even the all-powerful Pointing has no control about the blind."
+        content: "Always available to resolve issues and keep you running."
     },
 ]
 export default function Services() {
